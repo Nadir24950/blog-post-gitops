@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blog-post-microservice-frontend
+  labels:
+    app: blog-post-microservice-frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: blog-post-microservice-frontend
+  template:
+    metadata:
+      labels:
+        app: blog-post-microservice-frontend
+    spec:
+      containers:
+        - name: blog-post-microservice-frontend
+          image: nadir24950/blog-post-microservice-frontend:latest
+          resources:
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 80
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 80
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 80
+            initialDelaySeconds: 15
+            periodSeconds: 20
