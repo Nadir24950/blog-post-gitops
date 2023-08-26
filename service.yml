@@ -3,6 +3,8 @@ kind: Service
 metadata:
   name: blog-post-microservice-frontend-svc
 spec:
+  destination:
+    namespace: default
   type: NodePort
   selector:
     app: blog-post-microservice-frontend
