@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: blog-post-microservice-frontend
+  name: blog-post-microservice-frontend-svc
 spec:
   type: NodePort
   selector:
