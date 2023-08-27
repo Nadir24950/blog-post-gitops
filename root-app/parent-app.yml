@@ -1,9 +1,0 @@
-apiVersion: argoproj.io/vlalpha1
-kind: Application
-metadata:
-  name: root-app
-  namespace: argo-cd
-spec:
-  destination:
-    namespace: my-app
-    server:
