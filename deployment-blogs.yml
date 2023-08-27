@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: blog-post-microservice-blogs
+  labels:
+    app: blog-post-microservice-blogs
+spec:
+  destination:
+    namespace: default
+  replicas: 2
+  selector:
+    matchLabels:
+      app: blog-post-microservice-blogs
+  template:
+    metadata:
+      labels:
+        app: blog-post-microservice-blogs
+    spec:
+      containers:
+        - name: blog-post-microservice-blogs
+          image: nadir24950/blog-post-microservice-blogs:latest
+          resources:
+            limits:
+              memory: "256Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 3030
+          readinessProbe:
+            httpGet:
+              path: /health
+              port: 80
+            initialDelaySeconds: 5
+            periodSeconds: 10
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 80
+            initialDelaySeconds: 15
+            periodSeconds: 20

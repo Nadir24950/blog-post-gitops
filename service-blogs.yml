@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: blog-post-microservice-blogs-svc
+spec:
+  destination:
+    namespace: default
+  type: NodePort
+  selector:
+    app: blog-post-microservice-blogs
+  ports:
+    - port: 3030
+      targetPort: 3030
