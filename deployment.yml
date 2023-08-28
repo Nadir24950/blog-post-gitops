@@ -11,6 +11,7 @@ spec:
   selector:
     matchLabels:
       app: blog-post-microservice-frontend
+      tier: frontend
   template:
     metadata:
       labels:
