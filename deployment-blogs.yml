@@ -23,6 +23,12 @@ spec:
             limits:
               memory: "256Mi"
               cpu: "250m"
+          env:
+            - name: MONGODB_URI
+              valueFrom:
+                configMapKeyRef:
+                  name: configMap-blogs
+                  key: MONGODB_URI
           ports:
             - containerPort: 3030
           # readinessProbe:
