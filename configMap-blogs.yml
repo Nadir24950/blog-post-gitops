@@ -4,4 +4,3 @@ metadata:
   name: blog-post-microservice-blogs
 data:
   MONGODB_URI: "mongodb+srv://nadir24950:1ITd5ynQ@cluster0.hcif53s.mongodb.net/?retryWrites=true&w=majority"
-  PORT: 3030
