@@ -25,10 +25,7 @@ spec:
               cpu: "250m"
           env:
             - name: MONGODB_URI
-              valueFrom:
-                configMapKeyRef:
-                  name: configMap-blogs
-                  key: "MONGODB_URI"
+              value: "mongodb+srv://nadir24950:1ITd5ynQ@cluster0.hcif53s.mongodb.net/?retryWrites=true&w=majority"
           ports:
             - containerPort: 3030
           # readinessProbe:
