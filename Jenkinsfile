@@ -28,7 +28,7 @@ pipeline{
                     cat deployment.yml
                     echo "Done"
                     cat deployment-blogs.yml
-                    sed -i '21s/${APP_NAME}.*/${APP_NAME}:${IMAGE_TAG}/' deployment-blogs.yml
+                    sed -i '21s/${BLOG_NAME}.*/${BLOG_NAME}:${BLOG_IMAGE_TAG}/' deployment-blogs.yml
                 """
             }
         }
