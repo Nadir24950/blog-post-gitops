@@ -23,8 +23,6 @@ spec:
             limits:
               memory: "256Mi"
               cpu: "250m"
-          ports:
-            - containerPort: 80
           readinessProbe:
             httpGet:
               path: /health
