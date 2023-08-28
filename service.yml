@@ -7,7 +7,7 @@ spec:
     namespace: default
   type: LoadBalancer
   selector:
-    app: blog-post-microservice-blogs
+    app: blog-post-microservice-frontend
   ports:
     - port: 80
       targetPort: 80
