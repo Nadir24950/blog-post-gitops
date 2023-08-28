@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: blog-post-microservice-blogs
-          image: nadir24950/blog-post-microservice-blogs:latest
+          image: nadir24950/blog-post-microservice-blogs:1.0.0-11
           resources:
             limits:
               memory: "256Mi"
