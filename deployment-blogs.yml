@@ -5,8 +5,8 @@ metadata:
   labels:
     app: blog-post-microservice-blogs
 spec:
-  destination:
-    namespace: default
+  # destination:
+  #   namespace: default
   replicas: 1
   selector:
     matchLabels:
@@ -25,15 +25,15 @@ spec:
               cpu: "250m"
           ports:
             - containerPort: 3030
-          readinessProbe:
-            httpGet:
-              path: /health
-              port: 80
-            initialDelaySeconds: 10
-            periodSeconds: 15
-          livenessProbe:
-            httpGet:
-              path: /health
-              port: 80
-            initialDelaySeconds: 20
-            periodSeconds: 25
+          # readinessProbe:
+          #   httpGet:
+          #     path: /health
+          #     port: 80
+          #   initialDelaySeconds: 10
+          #   periodSeconds: 15
+          # livenessProbe:
+          #   httpGet:
+          #     path: /health
+          #     port: 80
+          #   initialDelaySeconds: 20
+          #   periodSeconds: 25
