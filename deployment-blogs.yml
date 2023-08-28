@@ -27,7 +27,7 @@ spec:
             - name: MONGODB_URI
               valueFrom:
                 configMapKeyRef:
-                  name: configMap-blogs
+                  name: blog-post-microservice-blogs-config
                   key: MONGODB_URI
           ports:
             - containerPort: 3030
